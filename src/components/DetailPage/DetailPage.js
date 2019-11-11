@@ -45,7 +45,7 @@ const DetailPage = () => {
 };
 
 const urlUtil = identifier => {
-  const ids = identifier.toLowerCase().split('-');
+  const ids = identifier.toLowerCase().replace('.mp4', '').split('-');
   const series = ids[0];
   const number = ids[1];
 
