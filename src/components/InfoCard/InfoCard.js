@@ -21,7 +21,7 @@ const InfoCard = props => {
         <div>
           {makerURL && <WebLink url={makerURL} title={makerName(makerURL)} icon={<MdMovieCreation />} />}
           <WebLink url={torrentURL} title="Torrent Kitty" icon={<FaCat />} />
-          <WebLink url={busURL} title="JavBus" icon={<FaBus />} />
+          {/* <WebLink url={busURL} title="JavBus" icon={<FaBus />} /> */}
         </div>
       }
     >
