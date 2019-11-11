@@ -1,0 +1,14 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.App-title {
+  margin: 48px 0;
+  text-align: center;
+}
+
+.App-content {
+  flex-grow: 1;
+}
