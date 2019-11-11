@@ -9,13 +9,13 @@ import './DetailPage.css';
 
 const DetailPage = () => {
   let history = useHistory();
-  const { flightId } = useParams();
+  let { flightId } = useParams();
+  flightId = flightId.replace('.mp4', '').toUpperCase();
   const urls = urlUtil(flightId);
 
   useEffect(() => {
     console.log(history);
-    // const identifier = flightId.toLowerCase().replace('.mp4', '');
-    // history.replace('/flights/' + identifier);
+    // history.replace('/flights/' + flightId);
   });
 
   const [ coverLoaded, setCoverLoaded ] = useState(true);
@@ -52,7 +52,7 @@ const DetailPage = () => {
 };
 
 const urlUtil = identifier => {
-  const ids = identifier.toLowerCase().replace('.mp4', '').split('-');
+  const ids = identifier.toLowerCase().split('-');
   const series = ids[0];
   const number = ids[1];
 
