@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useHistory, useParams } from 'react-router-dom';
 import { Container, Row, Col } from 'react-grid-system';
 
 import InfoCard from '../InfoCard';
@@ -8,8 +8,15 @@ import VideoCard from '../VideoCard';
 import './DetailPage.css';
 
 const DetailPage = () => {
+  let history = useHistory();
   const { flightId } = useParams();
   const urls = urlUtil(flightId);
+
+  useEffect(() => {
+    console.log(history);
+    // const identifier = flightId.toLowerCase().replace('.mp4', '');
+    // history.replace('/flights/' + identifier);
+  });
 
   const [ coverLoaded, setCoverLoaded ] = useState(true);
   const handleCoverLoad = e => {
