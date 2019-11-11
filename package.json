@@ -2,8 +2,9 @@
   "name": "flight",
   "version": "1.0.0",
   "private": true,
-  "homepage" : "https://flight.vulopus.com",
+  "homepage": "https://flight.vulopus.com",
   "dependencies": {
+    "gh-pages": "^2.1.1",
     "normalize.css": "^8.0.1",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
