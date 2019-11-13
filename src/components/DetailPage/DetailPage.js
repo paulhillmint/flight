@@ -4,6 +4,7 @@ import { Container, Row, Col } from 'react-grid-system';
 
 import InfoCard from '../InfoCard';
 import VideoCard from '../VideoCard';
+import AirlineCard from '../AirlineCard';
 
 import './DetailPage.css';
 
@@ -42,6 +43,7 @@ const DetailPage = () => {
       <Row gutterWidth={18}>
         <Col sm={4}>
           {renderInfoCard()}
+          <AirlineCard flightId={flightId} />
         </Col>
         <Col sm={8}>
           <VideoCard urls={urls} />
