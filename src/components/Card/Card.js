@@ -10,9 +10,13 @@ const Card = props => {
   const { hidden, header, footer, children } = props;
   return (
     <div className='Card' style={hidden ? hiddenStyles : {}}>
-      <div className='Card-header code'>
-        {header}
-      </div>
+      {
+        header && (
+          <div className='Card-header code'>
+            {header}
+          </div>
+        )
+      }
       {children}
       {
         footer && (
