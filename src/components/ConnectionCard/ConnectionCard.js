@@ -5,9 +5,9 @@ import { Row, Col } from 'react-grid-system';
 
 import Card from '../Card';
 
-import './AirlineCard.css';
+import './ConnectionCard.css';
 
-const AirlineCard = props => {
+const ConnectionCard = props => {
   const { flightId } = props;
 
   const ids = flightId.split('-');
@@ -20,21 +20,24 @@ const AirlineCard = props => {
   let previousNumber = ('00' + (parseInt(number) - 1)).slice(-3);
   previousNumber = previousNumber === '000' ? -1 : previousNumber;
 
+  const nextId = `${series}-${nextNumber}`;
+  const previousId = `${series}-${previousNumber}`;
+
   return (
     <Card
       header={
-        <h2>Airline: {series}</h2>
+        <h2>Connecting Flights</h2>
       }
     >
       <Row gutterWidth={10} className="Card-container">
-        <Col xs={6}>
-          <a className="Button Button-ghost code" href={urlFormatter(series, previousNumber)} target='_blank' rel='noopener noreferrer'>
-            <MdExposureNeg1 /><IoIosAirplane />{`${series}-${previousNumber}`}
+        <Col xs={6} md={12} lg={6}>
+          <a className="Button Button-ghost code ga-flight" id={previousId} href={urlFormatter(previousId)} target='_blank' rel='noopener noreferrer'>
+            <MdExposureNeg1 /><IoIosAirplane />{previousId}
           </a>
         </Col>
-        <Col xs={6}>
-          <a className="Button code" href={urlFormatter(series, nextNumber)} target='_blank' rel='noopener noreferrer'>
-            <MdExposurePlus1 /><IoIosAirplane />{`${series}-${nextNumber}`}
+        <Col xs={6} md={12} lg={6}>
+          <a className="Button code ga-flight" id={nextId} href={urlFormatter(nextId)} target='_blank' rel='noopener noreferrer'>
+            <MdExposurePlus1 /><IoIosAirplane />{nextId}
           </a>
         </Col>
       </Row>
@@ -42,8 +45,8 @@ const AirlineCard = props => {
   );
 };
 
-const urlFormatter = (series, number) => {
-  return `/flights/${series}-${number}.mp4`;
+const urlFormatter = identifier => {
+  return `/flights/${identifier}.mp4`;
 };
 
-export default AirlineCard;
+export default ConnectionCard;
