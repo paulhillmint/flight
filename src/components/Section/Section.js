@@ -20,12 +20,12 @@ const Section = props => {
   };
 
   return (
-    <Row gutterWidth={18}>
-      <Col md={12}>
-        <Headline title={`Airline ${series}`} />
-      </Col>
-      {renderCells()}
-    </Row>
+    <div>
+      <Headline title={`Airline ${series}`} />
+      <Row gutterWidth={18}>
+        {renderCells()}
+      </Row>
+    </div>
   );
 };
 
