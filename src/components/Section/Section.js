@@ -21,7 +21,7 @@ const Section = props => {
   return (
     <Row gutterWidth={18}>
       <Col md={12}>
-        <Headline title={`${series} Airline`} />
+        <Headline title={`Airline ${series}`} />
       </Col>
       {renderCells()}
     </Row>
@@ -32,7 +32,7 @@ const Headline = props => {
   const { title } = props;
   return (
     <div className='Headline code'>
-      <h2>{title}</h2>
+      <h2>✈{title}</h2>
     </div>
   );
 };
@@ -40,7 +40,7 @@ const Headline = props => {
 const Cell = props => {
   const { flightId } = props;
   return (
-    <Col md={3}>
+    <Col xs={4} lg={3}>
       <InfoCard flightId={flightId} isMini={true} />
     </Col>
   );
