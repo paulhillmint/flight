@@ -8,7 +8,7 @@ video {
 }
 
 .Card {
-  margin-top: 20px;
+  margin: 10px 0;
   background: #FFF;
   border-radius: 8px;
   box-shadow: 0 4px 28px 0 rgba(58,58,58,0.10);
@@ -33,4 +33,8 @@ video {
   color: #FD2B70;
   letter-spacing: 0.17px;
   text-transform: uppercase;
+}
+
+.Card h2.mini {
+  font-size: 14px;
 }
