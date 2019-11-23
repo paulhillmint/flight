@@ -4,7 +4,7 @@ import { FiLink, FiChevronRight } from 'react-icons/fi';
 import { IoIosWarning } from 'react-icons/io';
 import { MdMovieCreation } from 'react-icons/md';
 
-import urlUtil from '../../utils/urlUtil';
+import { urlFinder, urlFormatter } from '../../utils/urlUtil';
 
 import Card from '../Card';
 
@@ -12,7 +12,7 @@ import './InfoCard.css';
 
 const InfoCardContainer = props => {
   const { flightId, isMini } = props;
-  const urls = urlUtil(flightId);
+  const urls = urlFinder(flightId);
   const [ coverLoaded, setCoverLoaded ] = useState(true);
   const handleCoverLoad = e => {
     const { target:img } = e;
@@ -65,13 +65,15 @@ const MiniCard = props => {
   const { coverMiniURL } = urls;
 
   return (
-    <Card
-      header={
-        <h2 className='mini'>{flightId.toUpperCase()}</h2>
-      }
-    >
-      <img src={coverMiniURL} alt='cover' onLoad={handleCoverLoad} onError={handleCoverError} />
-    </Card>
+    <a className="MiniCard ga-flight" id={flightId} href={urlFormatter(flightId)} target='_blank' rel='noopener noreferrer'>
+      <Card
+        header={
+          <h2>{flightId.toUpperCase()}</h2>
+        }
+      >
+        <img src={coverMiniURL} alt='cover' onLoad={handleCoverLoad} onError={handleCoverError} />
+      </Card>
+    </a>
   );
 };
 

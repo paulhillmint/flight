@@ -42,3 +42,28 @@
   margin-top: 2px;
   font-size: 14px;
 }
+
+.MiniCard {
+  text-decoration: none;
+  transition: all ease-in-out .3s;
+}
+
+.MiniCard > .Card {
+  transition: all ease-in-out .3s;
+}
+
+.MiniCard:hover > .Card {
+  background-color: #FD2B70;
+}
+
+.MiniCard:hover > .Card h2 {
+  color: #FFF;
+}
+
+.MiniCard:hover > .Card img {
+  opacity: .7;
+}
+
+.MiniCard h2 {
+  font-size: 14px;
+}

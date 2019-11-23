@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { Container, Row, Col } from 'react-grid-system';
 
-import urlUtil from '../../utils/urlUtil';
+import { urlFinder } from '../../utils/urlUtil';
 
 import InfoCard from '../InfoCard';
 import VideoCard from '../VideoCard';
@@ -14,7 +14,7 @@ const DetailPage = () => {
   let history = useHistory();
   let { flightId } = useParams();
   flightId = flightId.replace('.mp4', '').toUpperCase();
-  const urls = urlUtil(flightId);
+  const urls = urlFinder(flightId);
 
   useEffect(() => {
     console.log(history);

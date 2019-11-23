@@ -1,4 +1,4 @@
-const urlUtil = identifier => {
+const urlFinder = identifier => {
   const ids = identifier.toLowerCase().split('-');
   const series = ids[0];
   const number = ids[1];
@@ -308,4 +308,11 @@ const urlUtil = identifier => {
   return { previewURL, bonusURL, coverURL, coverMiniURL, makerURL, shopURL, torrentURL, busURL };
 };
 
-export default urlUtil;
+const urlFormatter = identifier => {
+  return `/flights/${identifier}.mp4`;
+};
+
+export {
+  urlFinder, 
+  urlFormatter
+};
