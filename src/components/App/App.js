@@ -19,14 +19,13 @@ const App = () => {
             <Route path='/flights/:flightId'>
               <DetailPage />
             </Route>
-            <Route path='/flights'>
-              <ListPage />
+            <Route path='/airlines/:airlineId'>
             </Route>
             <Route path='/about'>
               <About />
             </Route>
             <Route path='/'>
-              <Home />
+              <ListPage />
             </Route>
           </Switch>
         </div>
@@ -34,10 +33,6 @@ const App = () => {
       </div>
     </Router>
   );
-};
-
-const Home = () => {
-  return <h2 class='App-title code'>Welcome to Flight</h2>;
 };
 
 const About = () => {
