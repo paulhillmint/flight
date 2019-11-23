@@ -2,6 +2,7 @@ import React from 'react';
 import { Row, Col } from 'react-grid-system';
 
 import InfoCard from '../InfoCard';
+import Headline from '../Headline';
 
 import './Section.css';
 
@@ -25,15 +26,6 @@ const Section = props => {
       </Col>
       {renderCells()}
     </Row>
-  );
-};
-
-const Headline = props => {
-  const { title } = props;
-  return (
-    <div className='Headline code'>
-      <h2>✈{title}</h2>
-    </div>
   );
 };
 
