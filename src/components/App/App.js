@@ -2,8 +2,9 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Header from '../Header';
+import ListPage from '../ListPage';
 import DetailPage from '../DetailPage';
-import Footer from '../Footer/Footer';
+import Footer from '../Footer';
 
 import 'normalize.css';
 import './App.css';
@@ -17,6 +18,9 @@ const App = () => {
           <Switch>
             <Route path='/flights/:flightId'>
               <DetailPage />
+            </Route>
+            <Route path='/flights'>
+              <ListPage />
             </Route>
             <Route path='/about'>
               <About />
