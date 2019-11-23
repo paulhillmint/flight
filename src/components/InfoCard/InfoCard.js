@@ -1,12 +1,42 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaBus, FaCat } from 'react-icons/fa';
 import { FiLink, FiChevronRight } from 'react-icons/fi';
 import { IoIosWarning } from 'react-icons/io';
 import { MdMovieCreation } from 'react-icons/md';
 
+import urlUtil from '../../utils/urlUtil';
+
 import Card from '../Card';
 
 import './InfoCard.css';
+
+const InfoCardContainer = props => {
+  const { flightId, isMini } = props;
+  const urls = urlUtil(flightId);
+  const [ coverLoaded, setCoverLoaded ] = useState(true);
+  const handleCoverLoad = e => {
+    const { target:img } = e;
+    if (!isMini && img.offsetWidth < img.offsetHeight) {
+      setCoverLoaded(false);
+    }
+  };
+  const handleCoverError = e => {
+    setCoverLoaded(false);
+  };
+
+  const renderInfoCard = () => {
+    if (coverLoaded) {
+      if (isMini) {
+        return <MiniCard flightId={flightId} urls={urls} handleCoverLoad={handleCoverLoad} handleCoverError={handleCoverError} />;
+      }
+      return <InfoCard flightId={flightId} urls={urls} handleCoverLoad={handleCoverLoad} handleCoverError={handleCoverError} />;
+    } else {
+      return <ErrorCard flightId={flightId} />;
+    }
+  };
+
+  return renderInfoCard();
+}
 
 const InfoCard = props => {
   const { flightId, urls, handleCoverLoad, handleCoverError } = props;
@@ -26,6 +56,21 @@ const InfoCard = props => {
       }
     >
       <img src={coverURL} alt='cover' onLoad={handleCoverLoad} onError={handleCoverError} />
+    </Card>
+  );
+};
+
+const MiniCard = props => {
+  const { flightId, urls, handleCoverLoad, handleCoverError } = props;
+  const { coverMiniURL } = urls;
+
+  return (
+    <Card
+      header={
+        <h2 className='mini'>{flightId.toUpperCase()}</h2>
+      }
+    >
+      <img src={coverMiniURL} alt='cover' onLoad={handleCoverLoad} onError={handleCoverError} />
     </Card>
   );
 };
@@ -137,5 +182,5 @@ const makerName = url => {
   return name;
 }
 
-export default InfoCard;
-InfoCard.ErrorCard = ErrorCard;
+export default InfoCardContainer;
+
