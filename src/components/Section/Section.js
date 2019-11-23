@@ -1,33 +1,49 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-grid-system';
+import { Row, Col } from 'react-grid-system';
 
 import InfoCard from '../InfoCard';
 
 import './Section.css';
 
-const Section = () => {
+const Section = props => {
+  const { series, startNumber, flightCount } = props;
+
+  const renderCells = () => {
+    let list = [];
+    for (let i = 0; i < flightCount ; i++) {
+      list.push(`${series}-${startNumber - i}`);
+    }
+    return list.map(flightId => (
+      <Cell flightId={flightId} key={flightId} />
+    ));
+  };
+
   return (
     <Row gutterWidth={18}>
       <Col md={12}>
-        <div className='Headline code'>
-          <h2>Airline: SSNI</h2>
-        </div>
+        <Headline title={`${series} Airline`} />
       </Col>
-      <Col md={3}>
-        <InfoCard flightId='SSNI-649' isMini={true} />
-      </Col>
-      <Col md={3}>
-        <InfoCard flightId='SSNI-648' isMini={true} />
-      </Col>
-      <Col md={3}>
-        <InfoCard flightId='SSNI-658' isMini={true} />
-      </Col>
-      <Col md={3}>
-        <InfoCard flightId='ABP-920' isMini={true} />
-      </Col>
+      {renderCells()}
     </Row>
   );
 };
 
+const Headline = props => {
+  const { title } = props;
+  return (
+    <div className='Headline code'>
+      <h2>{title}</h2>
+    </div>
+  );
+};
+
+const Cell = props => {
+  const { flightId } = props;
+  return (
+    <Col md={3}>
+      <InfoCard flightId={flightId} isMini={true} />
+    </Col>
+  );
+};
 
 export default Section;
