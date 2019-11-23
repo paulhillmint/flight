@@ -1,0 +1,14 @@
+.Headline {
+  margin-top: 10px;
+  margin-bottom: 4px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #FD2B70;
+}
+
+.Headline h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #FD2B70;
+  letter-spacing: 0.17px;
+  text-transform: uppercase;
+}
