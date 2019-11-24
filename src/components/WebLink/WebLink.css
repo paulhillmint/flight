@@ -24,3 +24,11 @@
 .WebLink-title {
   flex-grow: 1;
 }
+
+.WebLink-number {
+  padding: 2px 4px;
+  font-size: 12px;
+  color: #FFF;
+  background-color: #FD2B70;
+  border-radius: 8px;
+}

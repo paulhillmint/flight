@@ -11,13 +11,14 @@ import Card from '../Card';
 import './WebLink.css';
 
 const WebLink = props => {
-  const { url, title } = props;
+  const { url, title, number } = props;
   let { icon } = props;
   if (!icon) icon = (<FiLink />);
   return (
     <a className='WebLink' href={url} target='_blank' rel='noopener noreferrer'>
       <span className='WebLink-icon'>{icon}</span>
       <span className='WebLink-title'>{title}</span>
+      {number > 0 && (<span className='WebLink-number'>{number}</span>)}
       <span className='WebLink-arrow'><FiChevronRight /></span>
     </a>
   );

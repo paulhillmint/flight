@@ -59,7 +59,7 @@ const AirlineListCard = props => {
 
   const renderAirlines = () => {
     return list.map(a => (
-      <WebLink url={airlineURLFormatter(a.series)} title={`Airline ${a.series}`} icon={<MdLabel />} key={a.series} />
+      <WebLink url={airlineURLFormatter(a.series)} title={`Airline ${a.series}`} icon={<MdLabel />} number={a.startNumber} key={a.series} />
     ));
   };
 
