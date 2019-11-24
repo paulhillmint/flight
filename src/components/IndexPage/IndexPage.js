@@ -6,6 +6,7 @@ import data from '../../data';
 import Section from '../Section';
 import Headline from '../Headline';
 import InfoCard from '../InfoCard';
+import AllAirlinesSection from '../AllAirlinesSection';
 
 import './IndexPage.css';
 
@@ -39,6 +40,7 @@ const IndexPage = () => {
           <Row gutterWidth={18}>
             {renderTodayCells()}
           </Row>
+          <AllAirlinesSection />
         </Col>
       </Row>
     </Container>
