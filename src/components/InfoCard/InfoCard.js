@@ -55,8 +55,8 @@ const InfoCard = props => {
       footer={
         <div>
           {makerURL && <WebLink url={makerURL} title={makerName(makerURL)} icon={<MdMovieCreation />} />}
-          <WebLink url={torrentURL} title="Torrent Kitty" icon={<FaCat />} />
-          {/* <WebLink url={busURL} title="JavBus" icon={<FaBus />} /> */}
+          <WebLink url={torrentURL} title='Torrent Kitty' icon={<FaCat />} />
+          {/* <WebLink url={busURL} title='JavBus' icon={<FaBus />} /> */}
         </div>
       }
     >
@@ -69,7 +69,7 @@ const MiniCard = props => {
   const { flightId, url, handleCoverLoad, handleCoverError } = props;
 
   return (
-    <a className="MiniCard ga-flight" id={flightId} href={flightURLFormatter(flightId)} target='_blank' rel='noopener noreferrer'>
+    <a className='MiniCard ga-flight' id={flightId} href={flightURLFormatter(flightId)} target='_blank' rel='noopener noreferrer'>
       <Card
         header={
           <h2>{flightId.toUpperCase()}</h2>

@@ -1,13 +1,17 @@
 import React from 'react';
 import { Row, Col } from 'react-grid-system';
+import { MdLabel, MdExposurePlus1 } from 'react-icons/md';
+
+import { urlFinder, airlineURLFormatter } from '../../utils/urlUtil';
 
 import InfoCard from '../InfoCard';
 import Headline from '../Headline';
+import Card from '../Card';
 
 import './Section.css';
 
 const Section = props => {
-  const { series, startNumber, flightCount } = props;
+  const { series, startNumber, flightCount, hasMore } = props;
 
   const renderCells = () => {
     let list = [];
@@ -25,6 +29,7 @@ const Section = props => {
       <Row gutterWidth={18}>
         {renderCells()}
       </Row>
+      {hasMore && (<More series={series} number={startNumber} />)}
     </div>
   );
 };
@@ -37,5 +42,16 @@ const Cell = props => {
     </Col>
   );
 };
+
+const More = props => {
+  const { series, number } = props;
+  return (
+    <a className='More ga-airline' id={series} href={airlineURLFormatter(series)} target='_blank' rel='noopener noreferrer'>
+      <Card>
+        {`View All ${number} Flights of Airline ${series}`}
+      </Card>
+    </a>
+  )
+}
 
 export default Section;

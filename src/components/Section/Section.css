@@ -1,0 +1,21 @@
+.More {
+  display: block;
+  margin-bottom: 35px;
+  text-align: center;
+  text-decoration: none;
+  color: #FD2B70;
+  transition: all ease-in-out .3s;
+}
+
+.More > .Card {
+  padding: 14px 18px;
+  transition: all ease-in-out .3s;
+}
+
+.More:hover > .Card {
+  background-color: #FD2B70;
+}
+
+.More:hover > .Card {
+  color: #FFF;
+}

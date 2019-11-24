@@ -27,7 +27,7 @@ const IndexPage = () => {
       }
     ];
     return list.map(({ series, startNumber, flightCount }) => (
-      <Section series={series} startNumber={startNumber} flightCount={flightCount} key={series} />
+      <Section series={series} startNumber={startNumber} flightCount={flightCount} hasMore={true} key={series} />
     ));
   };
 
