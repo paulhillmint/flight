@@ -4,6 +4,7 @@ img {
 }
 
 video {
+  display: block;
   width: 100%;
   outline: 0;
 }
@@ -33,4 +34,9 @@ video {
   font-weight: 600;
   color: #FD2B70;
   text-transform: uppercase;
+}
+
+.Card-line {
+  height: 1px;
+  background-color: #FD2B70;
 }
