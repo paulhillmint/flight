@@ -9,7 +9,11 @@ const Header = () => {
       <Container>
         <Row>
           <Col sm={4}>
-            <div className='Header-title code'>✈Flight</div>
+            <div className='Header-title code'>
+              <a className="ga-index" href='/' target='_blank' rel='noopener noreferrer'>
+                ✈Flight
+              </a>
+            </div>
           </Col>
           <Col sm={8}>
             <div className='Header-nav'>
