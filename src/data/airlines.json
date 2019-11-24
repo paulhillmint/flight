@@ -1,0 +1,144 @@
+{
+  "airlines": [
+    {
+      "category": "Legend",
+      "list": [
+        {
+          "series": "SSNI",
+          "startNumber": 658,
+          "indexCount": 16
+        }, {
+          "series": "ABP",
+          "startNumber": 933,
+          "indexCount": 8
+        }, {
+          "series": "IPX",
+          "startNumber": 421,
+          "indexCount": 16
+        }, {
+          "series": "PPPD",
+          "startNumber": 817,
+          "indexCount": 8
+        }, {
+          "series": "MEYD",
+          "startNumber": 558,
+          "indexCount": 12
+        }
+      ]
+    }, {
+      "category": "fashion",
+      "list": [
+        {
+          "series": "STARS",
+          "startNumber": 175
+        }, {
+          "series": "MIDE",
+          "startNumber": 717
+        }, {
+          "series": "CAWD",
+          "startNumber": 36
+        }, {
+          "series": "WANZ",
+          "startNumber": 916
+        }, {
+          "series": "EBOD",
+          "startNumber": 726
+        }, {
+          "series": "ATID",
+          "startNumber": 388
+        }, {
+          "series": "SSPD",
+          "startNumber": 151
+        }, {
+          "series": "PRED",
+          "startNumber": 205
+        }, {
+          "series": "JUL",
+          "startNumber": 69
+        }, {
+          "series": "HND",
+          "startNumber": 762
+        }
+      ]
+    }, {
+      "category": "pilot",
+      "list": [
+        {
+          "series": "CHN",
+          "startNumber": 180
+        }, {
+          "series": "BGN",
+          "startNumber": 56
+        }, {
+          "series": "SDAB",
+          "startNumber": 114
+        }, {
+          "series": "SDDE",
+          "startNumber": 606
+        }, {
+          "series": "MIAA",
+          "startNumber": 201
+        }, {
+          "series": "MIZD",
+          "startNumber": 166
+        }, {
+          "series": "MIRD",
+          "startNumber": 198
+        }, {
+          "series": "MIFD",
+          "startNumber": 198
+        }, {
+          "series": "MIMK",
+          "startNumber": 70
+        }, {
+          "series": "SHKD",
+          "startNumber": 884
+        }, {
+          "series": "RBD",
+          "startNumber": 952
+        }, {
+          "series": "ADN",
+          "startNumber": 233
+        }, {
+          "series": "MMND",
+          "startNumber": 179
+        }
+      ]
+    }, {
+      "category": "classic",
+      "list": [
+        {
+          "series": "SNIS",
+          "startNumber": 999
+        }, {
+          "series": "SOE",
+          "startNumber": 999
+        }, {
+          "series": "ABS",
+          "startNumber": 999
+        }, {
+          "series": "SUPD",
+          "startNumber": 141
+        }, {
+          "series": "IPZ",
+          "startNumber": 999
+        }, {
+          "series": "IPTD",
+          "startNumber": 999
+        }, {
+          "series": "STAR",
+          "startNumber": 999
+        }, {
+          "series": "MIDD",
+          "startNumber": 999
+        }, {
+          "series": "KAWD",
+          "startNumber": 999
+        }, {
+          "series": "MDYD",
+          "startNumber": 999
+        }
+      ]
+    }
+  ]
+}
