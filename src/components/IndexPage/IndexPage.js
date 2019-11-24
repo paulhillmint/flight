@@ -4,8 +4,7 @@ import { Container, Row, Col } from 'react-grid-system';
 import data from '../../data';
 
 import Section from '../Section';
-import Headline from '../Headline';
-import InfoCard from '../InfoCard';
+import TodaysSpecialSection from '../TodaysSpecialSection';
 import AllAirlinesSection from '../AllAirlinesSection';
 
 import './IndexPage.css';
@@ -20,15 +19,6 @@ const IndexPage = () => {
     });
   };
 
-  const renderTodayCells = () => {
-    const list = data.specials;
-    return list.map(flightId => (
-      <Col lg={12} key={flightId}>
-        <InfoCard flightId={flightId} isMini={true} isFull={true} />
-      </Col>
-    ));
-  };
-
   return (
     <Container>
       <Row gutterWidth={18}>
@@ -36,10 +26,7 @@ const IndexPage = () => {
           {renderAirline()}
         </Col>
         <Col md={4}>
-          <Headline title={`Today's Special`} />
-          <Row gutterWidth={18}>
-            {renderTodayCells()}
-          </Row>
+          <TodaysSpecialSection />
           <AllAirlinesSection />
         </Col>
       </Row>

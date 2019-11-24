@@ -1,1 +1,1 @@
-export { default } from './AllAirlinesSection.js';
+export { default } from './AllAirlinesSection';
