@@ -29,6 +29,11 @@ video {
   padding: 0 18px 12px 18px;
 }
 
+.Card-line {
+  height: 1px;
+  background-color: #FD2B70;
+}
+
 .Card h2 {
   font-size: 16px;
   font-weight: 600;
@@ -36,7 +41,7 @@ video {
   text-transform: uppercase;
 }
 
-.Card-line {
-  height: 1px;
-  background-color: #FD2B70;
+.Card p {
+  padding-bottom: 8px;
+  line-height: 22px;
 }

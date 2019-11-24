@@ -5,6 +5,7 @@ import Header from '../Header';
 import IndexPage from '../IndexPage';
 import ListPage from '../ListPage';
 import DetailPage from '../DetailPage';
+import AboutPage from '../AboutPage';
 import Footer from '../Footer';
 
 import 'normalize.css';
@@ -24,7 +25,7 @@ const App = () => {
               <ListPage />
             </Route>
             <Route path='/about'>
-              <About />
+              <AboutPage />
             </Route>
             <Route path='/'>
               <IndexPage />
@@ -35,10 +36,6 @@ const App = () => {
       </div>
     </Router>
   );
-};
-
-const About = () => {
-  return <h2 class='App-title code'>About</h2>;
 };
 
 export default App;
