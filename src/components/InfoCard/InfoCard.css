@@ -1,10 +1,26 @@
 .ErrorCard-sign {
+  position: relative;
   margin: 0 18px 18px 18px;
-  padding: 54px 18px 72px 18px;
   text-align: center;
   color: #777;
   background-color: #FBF9F5;
   border-radius: 8px;
+}
+
+.ErrorCard-sign:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.ErrorCard-sign-content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
 .ErrorCard-sign .icon {

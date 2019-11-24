@@ -41,6 +41,10 @@ video {
   text-transform: uppercase;
 }
 
+.Card h2.mini {
+  font-size: 14px;
+}
+
 .Card p {
   padding-bottom: 8px;
   line-height: 22px;

@@ -26,17 +26,14 @@ const InfoCardContainer = props => {
   };
 
   const renderInfoCard = () => {
-    if (isMini) {
-      if (coverLoaded) {
-        return <MiniCard flightId={flightId} url={isFull ? urls.coverURL : urls.coverMiniURL} handleCoverLoad={handleCoverLoad} handleCoverError={handleCoverError} />;
-      } else {
-        return null;
-      }
-    }
+    
     if (coverLoaded) {
+      if (isMini) {
+        return <MiniCard flightId={flightId} url={isFull ? urls.coverURL : urls.coverMiniURL} handleCoverLoad={handleCoverLoad} handleCoverError={handleCoverError} />;
+      }
       return <InfoCard flightId={flightId} urls={urls} handleCoverLoad={handleCoverLoad} handleCoverError={handleCoverError} />;
     } else {
-      return <ErrorCard flightId={flightId} />;
+      return <ErrorCard flightId={flightId} isMini={isMini} />;
     }
   };
 
@@ -82,16 +79,19 @@ const MiniCard = props => {
 };
 
 const ErrorCard = props => {
-  const { flightId } = props;
+  const { flightId, isMini } = props;
+  const header = isMini ? (
+    <h2 className='mini'>{flightId.toUpperCase()}</h2>
+  ) : (
+    <h2>{`Flight: ${flightId.toUpperCase()}`}</h2>
+  );
   return (
-    <Card
-      header={
-        <h2>Flight: {flightId.toUpperCase()}</h2>
-      }
-    >
+    <Card header={header}>
       <div className='ErrorCard-sign'>
-        <IoIosWarning className='icon' />
-        <h3>Flight Not Found</h3>
+        <div className='ErrorCard-sign-content'>
+          <IoIosWarning className='icon' />
+          <h3>Flight Not Found</h3>
+        </div>
       </div>
     </Card>
   );
