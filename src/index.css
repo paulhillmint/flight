@@ -65,8 +65,3 @@ code,
   font-family: 'Share Tech Mono', 'Cutive Mono', source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
-a {
-	color: inherit;
-	text-decoration: none;
-}

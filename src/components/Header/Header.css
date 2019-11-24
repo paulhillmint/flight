@@ -6,11 +6,30 @@ header {
   background-color: #FD2B70;
 }
 
+header a {
+	color: #FFF;
+  text-decoration: none;
+  transition: all ease-in-out .3s;
+}
+
+header a:hover {
+  opacity: .5;
+}
+
 .Header-title {
   font-size: 24px;
   letter-spacing: 0.3px;
 }
 
 .Header-nav {
+  font-size: 18px;
   text-align: right;
+}
+
+.Header-nav a {
+  margin-left: 18px;
+}
+
+.Header-nav a svg {
+  vertical-align: text-top;
 }
