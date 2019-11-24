@@ -37,7 +37,8 @@ const ListPage = () => {
     if (airline) {
       return (<Section series={airlineId} startNumber={airline.startNumber} flightCount={airline.startNumber} />);
     } else {
-      return data.airlines[0].list.map(a => (
+      const list = data.airlines[0].list.concat(data.airlines[1].list);
+      return list.map(a => (
         <Section series={a.series} startNumber={a.startNumber} flightCount={4} hasMore={true} key={a.series} />
       ));
     }
