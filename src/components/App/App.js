@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Header from '../Header';
+import IndexPage from '../IndexPage';
 import ListPage from '../ListPage';
 import DetailPage from '../DetailPage';
 import Footer from '../Footer';
@@ -20,12 +21,13 @@ const App = () => {
               <DetailPage />
             </Route>
             <Route path='/airlines/:airlineId'>
+              <ListPage />
             </Route>
             <Route path='/about'>
               <About />
             </Route>
             <Route path='/'>
-              <ListPage />
+              <IndexPage />
             </Route>
           </Switch>
         </div>
