@@ -20,7 +20,7 @@ const IndexPage = () => {
   };
 
   const renderTodayCells = () => {
-    const list = [ 'SSNI-643', 'IPX-415', 'SSNI-658' ];
+    const list = data.specials;
     return list.map(flightId => (
       <Col lg={12} key={flightId}>
         <InfoCard flightId={flightId} isMini={true} isFull={true} />

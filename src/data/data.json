@@ -1,4 +1,9 @@
 {
+  "specials": [
+    "SSNI-643",
+    "IPX-415",
+    "SSNI-658"
+  ],
   "airlines": [
     {
       "category": "Legend",

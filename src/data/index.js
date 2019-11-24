@@ -1,1 +1,1 @@
-export { default } from './airlines.json';
+export { default } from './data.json';
