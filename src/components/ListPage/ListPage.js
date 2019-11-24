@@ -5,6 +5,7 @@ import { IoIosAirplane } from 'react-icons/io';
 import { MdLabel, MdExposurePlus1 } from 'react-icons/md';
 
 import { urlFinder, airlineURLFormatter } from '../../utils/urlUtil';
+import data from '../../data';
 
 import Section from '../Section';
 import Headline from '../Headline';
@@ -14,30 +15,37 @@ import WebLink from '../WebLink';
 
 import './ListPage.css';
 
-const airlineList = [ 'SSNI', 'ABP', 'IPX' ];
-
 const ListPage = () => {
   let { airlineId } = useParams();
   airlineId = airlineId.toUpperCase();
-  if (airlineList.includes(airlineId)) {
-    // Airline page
-  } else {
-    // Index page
+
+  let airline;
+  data.airlines.some(g => {
+    airline = g.list.find(a => a.series === airlineId);
+    return airline !== undefined;
+  });
+  console.log(airline);
+  if (!airline) {
+    // Go to index page
   }
+
+  const renderAirlineCards = () => {
+    return data.airlines.map(a => (
+      <AirlineListCard title={`${a.category} Airlines`} list={a.list} key={a.category} />
+    ));
+  };
 
   return (
     <Container>
       <Row gutterWidth={18}>
         <Col md={8}>
-          <Section series={airlineId} startNumber={658} flightCount={120} />
+          <Section series={airlineId} startNumber={airline.startNumber} flightCount={airline.startNumber} />
         </Col>
         <Col md={4}>
           <Headline title={`All Airlines`} />
           <Row gutterWidth={18}>
             <Col lg={12}>
-              <AirlineListCard title='Legend Airlines' list={[ 'SSNI', 'IPX', 'ABP' ]} />
-              <AirlineListCard title='Fashion Airlines' list={[ 'STARS', 'PPPD', 'WANZ', 'MIDE' ]} />
-              <AirlineListCard title='Classic Airlines' list={[ 'SNIS', 'SOE', 'IPZ', 'IPTD', 'ABS' ]} />
+              {renderAirlineCards()}
             </Col>
           </Row>
         </Col>
@@ -50,8 +58,8 @@ const AirlineListCard = props => {
   const { title, list } = props;
 
   const renderAirlines = () => {
-    return list.map(airlineId => (
-      <WebLink url={airlineURLFormatter(airlineId)} title={`Airline ${airlineId}`} icon={<MdLabel />} />
+    return list.map(a => (
+      <WebLink url={airlineURLFormatter(a.series)} title={`Airline ${a.series}`} icon={<MdLabel />} key={a.series} />
     ));
   };
 

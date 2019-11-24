@@ -12,7 +12,7 @@ const Section = props => {
   const renderCells = () => {
     let list = [];
     for (let i = 0; i < flightCount ; i++) {
-      list.push(`${series}-${startNumber - i}`);
+      list.push(`${series}-${('00' + (startNumber - i)).slice(-3)}`);
     }
     return list.map(flightId => (
       <Cell flightId={flightId} key={flightId} />
