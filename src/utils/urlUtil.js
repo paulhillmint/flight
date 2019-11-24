@@ -299,7 +299,7 @@ const urlFinder = identifier => {
       break;
   }
 
-  coverMiniURL = coverURL.replace('-pl', '-ps').replace('pb_', 'pf_');
+  coverMiniURL = coverURL.replace('pl.', 'ps.').replace('pb_', 'pf_');
 
   shopURL = `http://www.dmm.co.jp/`;
   torrentURL = `https://www.torrentkitty.tv/search/${identifier}`;
