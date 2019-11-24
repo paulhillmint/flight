@@ -308,11 +308,16 @@ const urlFinder = identifier => {
   return { previewURL, bonusURL, coverURL, coverMiniURL, makerURL, shopURL, torrentURL, busURL };
 };
 
-const urlFormatter = identifier => {
+const flightURLFormatter = identifier => {
   return `/flights/${identifier}.mp4`;
 };
 
+const airlineURLFormatter = identifier => {
+  return `/airlines/${identifier}`;
+}
+
 export {
   urlFinder, 
-  urlFormatter
+  flightURLFormatter,
+  airlineURLFormatter
 };
