@@ -1,6 +1,8 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-grid-system';
 
+import data from '../../data';
+
 import Section from '../Section';
 import Headline from '../Headline';
 import InfoCard from '../InfoCard';
@@ -9,26 +11,12 @@ import './IndexPage.css';
 
 const IndexPage = () => {
   const renderAirline = () => {
-    const list = [
-      {
-        series: 'SSNI',
-        startNumber: '658',
-        flightCount: 16
-      },
-      {
-        series: 'ABP',
-        startNumber: '933',
-        flightCount: 8
-      },
-      {
-        series: 'IPX',
-        startNumber: '421',
-        flightCount: 16
+    const list = data.airlines[0].list.concat(data.airlines[1].list);
+    return list.map(a => {
+      if (a.indexCount && a.indexCount > 0) {
+        return (<Section series={a.series} startNumber={a.startNumber} flightCount={a.indexCount} hasMore={true} key={a.series} />);
       }
-    ];
-    return list.map(({ series, startNumber, flightCount }) => (
-      <Section series={series} startNumber={startNumber} flightCount={flightCount} hasMore={true} key={series} />
-    ));
+    });
   };
 
   const renderTodayCells = () => {

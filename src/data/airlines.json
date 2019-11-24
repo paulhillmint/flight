@@ -30,13 +30,16 @@
       "list": [
         {
           "series": "STARS",
-          "startNumber": 175
+          "startNumber": 175,
+          "indexCount": 4
         }, {
           "series": "MIDE",
-          "startNumber": 717
+          "startNumber": 717,
+          "indexCount": 4
         }, {
           "series": "CAWD",
-          "startNumber": 36
+          "startNumber": 36,
+          "indexCount": 4
         }, {
           "series": "WANZ",
           "startNumber": 916
@@ -48,7 +51,8 @@
           "startNumber": 388
         }, {
           "series": "SSPD",
-          "startNumber": 151
+          "startNumber": 151,
+          "indexCount": 4
         }, {
           "series": "PRED",
           "startNumber": 205
