@@ -21,7 +21,7 @@ const App = () => {
             <Route path='/flights/:flightId'>
               <DetailPage />
             </Route>
-            <Route path='/airlines/:airlineId'>
+            <Route path={[ '/airlines/:airlineId', '/airlines' ]}>
               <ListPage />
             </Route>
             <Route path='/about'>

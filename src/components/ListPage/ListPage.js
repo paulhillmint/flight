@@ -16,8 +16,12 @@ import WebLink from '../WebLink';
 import './ListPage.css';
 
 const ListPage = () => {
+  let history = useHistory();
+
   let { airlineId } = useParams();
-  airlineId = airlineId.toUpperCase();
+  if (airlineId) {
+    airlineId = airlineId.toUpperCase();
+  }
 
   let airline;
   data.airlines.some(g => {
@@ -25,9 +29,19 @@ const ListPage = () => {
     return airline !== undefined;
   });
   console.log(airline);
-  if (!airline) {
-    // Go to index page
+  if (airlineId && !airline) {
+    history.replace('/airlines');
   }
+
+  const renderAirline = () => {
+    if (airline) {
+      return (<Section series={airlineId} startNumber={airline.startNumber} flightCount={airline.startNumber} />);
+    } else {
+      return data.airlines[0].list.map(a => (
+        <Section series={a.series} startNumber={a.startNumber} flightCount={4} />
+      ));
+    }
+  };
 
   const renderAirlineCards = () => {
     return data.airlines.map(a => (
@@ -39,7 +53,7 @@ const ListPage = () => {
     <Container>
       <Row gutterWidth={18}>
         <Col md={8}>
-          <Section series={airlineId} startNumber={airline.startNumber} flightCount={airline.startNumber} />
+          {renderAirline()}
         </Col>
         <Col md={4}>
           <Headline title={`All Airlines`} />
@@ -57,7 +71,7 @@ const ListPage = () => {
 const AirlineListCard = props => {
   const { title, list } = props;
 
-  const renderAirlines = () => {
+  const renderAirlineLinks = () => {
     return list.map(a => (
       <WebLink url={airlineURLFormatter(a.series)} title={`Airline ${a.series}`} icon={<MdLabel />} number={a.startNumber} key={a.series} />
     ));
@@ -69,7 +83,7 @@ const AirlineListCard = props => {
         <h2>{title}</h2>
       }
       footer={
-        renderAirlines()
+        renderAirlineLinks()
       }
     >
       <div className='Card-line'></div>
