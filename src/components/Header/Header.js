@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-grid-system';
+import { Container, Row, Col, Hidden } from 'react-grid-system';
 import { FaRegStar } from 'react-icons/fa';
 
 import './Header.css';
@@ -24,26 +24,32 @@ const Header = () => {
     }
     return false;
   }
-  
+
   return (
     <header>
       <Container>
         <Row>
-          <Col sm={4}>
+          <Col xs={1} sm={3}>
             <div className='Header-title code'>
               <a className="ga-nav" id="index" href='/' target='_blank' rel='noopener noreferrer'>
-                ✈Flight
+                ✈<Hidden xs>Flight</Hidden>
               </a>
             </div>
           </Col>
-          <Col sm={8}>
+          <Col xs={11} sm={9}>
             <div className='Header-nav code'>
               <a className="ga-nav" id="flights" href='/' target='_blank' rel='noopener noreferrer'>
-                Hall
+                Flights
               </a>
+              &nbsp;&nbsp;/
+              <a className="ga-nav" id="airlines" href='/' target='_blank' rel='noopener noreferrer'>
+                Airlines
+              </a>
+              &nbsp;&nbsp;/
               <a className="ga-nav" id="about" href='/about' target='_blank' rel='noopener noreferrer'>
                 About
               </a>
+              &nbsp;&nbsp;/
               <a className="ga-nav" id="fav" onClick={handleFav}>
                 <FaRegStar />
               </a>
