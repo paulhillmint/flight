@@ -1,7 +1,7 @@
 import React from 'react';
+import { Row, Col } from 'react-grid-system';
 import { IoIosAirplane } from 'react-icons/io';
 import { MdExposureNeg1, MdExposurePlus1 } from 'react-icons/md';
-import { Row, Col } from 'react-grid-system';
 
 import Card from '../Card';
 

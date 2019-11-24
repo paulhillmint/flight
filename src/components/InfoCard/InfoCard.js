@@ -4,9 +4,10 @@ import { FiLink, FiChevronRight } from 'react-icons/fi';
 import { IoIosWarning } from 'react-icons/io';
 import { MdMovieCreation } from 'react-icons/md';
 
-import { urlFinder, urlFormatter } from '../../utils/urlUtil';
+import { urlFinder, flightURLFormatter } from '../../utils/urlUtil';
 
 import Card from '../Card';
+import WebLink from '../WebLink';
 
 import './InfoCard.css';
 
@@ -25,10 +26,14 @@ const InfoCardContainer = props => {
   };
 
   const renderInfoCard = () => {
-    if (coverLoaded) {
-      if (isMini) {
+    if (isMini) {
+      if (coverLoaded) {
         return <MiniCard flightId={flightId} url={isFull ? urls.coverURL : urls.coverMiniURL} handleCoverLoad={handleCoverLoad} handleCoverError={handleCoverError} />;
+      } else {
+        return null;
       }
+    }
+    if (coverLoaded) {
       return <InfoCard flightId={flightId} urls={urls} handleCoverLoad={handleCoverLoad} handleCoverError={handleCoverError} />;
     } else {
       return <ErrorCard flightId={flightId} />;
@@ -64,7 +69,7 @@ const MiniCard = props => {
   const { flightId, url, handleCoverLoad, handleCoverError } = props;
 
   return (
-    <a className="MiniCard ga-flight" id={flightId} href={urlFormatter(flightId)} target='_blank' rel='noopener noreferrer'>
+    <a className="MiniCard ga-flight" id={flightId} href={flightURLFormatter(flightId)} target='_blank' rel='noopener noreferrer'>
       <Card
         header={
           <h2>{flightId.toUpperCase()}</h2>
@@ -89,19 +94,6 @@ const ErrorCard = props => {
         <h3>Flight Not Found</h3>
       </div>
     </Card>
-  );
-};
-
-const WebLink = props => {
-  const { url, title } = props;
-  let { icon } = props;
-  if (!icon) icon = (<FiLink />);
-  return (
-    <a className='WebLink' href={url} target='_blank' rel='noopener noreferrer'>
-      <span className='WebLink-icon'>{icon}</span>
-      <span className='WebLink-title'>{title}</span>
-      <span className='WebLink-arrow'><FiChevronRight /></span>
-    </a>
   );
 };
 
@@ -184,4 +176,3 @@ const makerName = url => {
 }
 
 export default InfoCardContainer;
-
