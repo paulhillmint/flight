@@ -1,0 +1,26 @@
+.WebLink {
+  display: flex;
+  align-items: center;
+  justify-content: stretch;
+  height: 24px;
+  margin: 4px 0;
+  text-decoration: none;
+  color: #3A3A3A;
+  border-bottom: 1px solid transparent;
+  transition: all ease-in-out .3s;
+}
+
+.WebLink:hover {
+  color: #FD2B70;
+  border-bottom-color: #FD2B70;
+}
+
+.WebLink-icon {
+  width: 14px;
+  padding-right: 4px;
+  text-align: center;
+}
+
+.WebLink-title {
+  flex-grow: 1;
+}
