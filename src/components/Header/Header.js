@@ -42,7 +42,7 @@ const Header = () => {
                 Flights
               </a>
               &nbsp;&nbsp;/
-              <a className="ga-nav" id="airlines" href='/' target='_blank' rel='noopener noreferrer'>
+              <a className="ga-nav" id="airlines" href='/airlines' target='_blank' rel='noopener noreferrer'>
                 Airlines
               </a>
               &nbsp;&nbsp;/
