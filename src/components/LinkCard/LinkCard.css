@@ -1,0 +1,30 @@
+.LinkCard {
+  display: block;
+  line-height: 20px;
+  text-align: center;
+  text-decoration: none;
+  color: #FD2B70;
+  transition: all ease-in-out .3s;
+}
+
+.LinkCard svg {
+  margin-right: 4px;
+  vertical-align: middle;
+}
+
+.LinkCard span {
+  vertical-align: middle;
+}
+
+.LinkCard > .Card {
+  padding: 14px 18px;
+  transition: all ease-in-out .3s;
+}
+
+.LinkCard:hover > .Card {
+  background-color: #FD2B70;
+}
+
+.LinkCard:hover > .Card {
+  color: #FFF;
+}
