@@ -6,21 +6,15 @@ import './Header.css';
 
 const Header = () => {
   const handleFav = e => {
-    const pageTitle = document.title;
-    const pageURL = document.location;
+    const title = document.title;
+    const url = document.location;
     try {
-      // Internet Explorer
-      eval("window.external.AddFa-vorite(pageURL, pageTitle)".replace(/-/g,''));
+      // Mozilla Firefox
+      window.sidebar.addPanel(title, url, "");
     }
     catch (e) {
-      try {
-        // Mozilla Firefox
-        window.sidebar.addPanel(pageTitle, pageURL, "");
-      }
-      catch (e) {
-        // Opera, Chrome, Safari, others
-        alert('Please press ' + (navigator.userAgent.toLowerCase().indexOf('mac') != -1 ? '⌘Cmd' : 'Ctrl') + '+D to bookmark this page.');
-      }
+      // Opera, Chrome, Safari, others
+      alert('Please press ' + (navigator.userAgent.toLowerCase().indexOf('mac') !== -1 ? '⌘Cmd' : 'Ctrl') + '+D to bookmark this page.');
     }
     return false;
   }
