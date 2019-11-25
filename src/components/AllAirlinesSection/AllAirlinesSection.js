@@ -1,6 +1,6 @@
 import React from 'react';
 import { Row, Col } from 'react-grid-system';
-import { MdLabel } from 'react-icons/md';
+import { FiList } from 'react-icons/fi';
 
 import { airlineURLFormatter } from '../../utils/urlUtil';
 import data from '../../data';
@@ -35,7 +35,7 @@ const AirlineListCard = props => {
 
   const renderAirlineLinks = () => {
     return list.map(a => (
-      <WebLink url={airlineURLFormatter(a.series)} title={`Airline ${a.series}`} icon={<MdLabel />} number={a.startNumber} key={a.series} />
+      <WebLink url={airlineURLFormatter(a.series)} title={`Airline ${a.series}`} icon={<FiList />} number={a.startNumber} key={a.series} />
     ));
   };
 
