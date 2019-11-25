@@ -28,7 +28,7 @@ const InfoCardContainer = props => {
     
     if (coverLoaded) {
       if (isMini) {
-        return <MiniCard flightId={flightId} url={isFull ? urls.coverURL : urls.coverMiniURL} handleCoverLoad={handleCoverLoad} handleCoverError={handleCoverError} />;
+        return <MiniCard flightId={flightId} url={isFull ? urls.coverURL : urls.coverMiniURL} location={isFull ? 'card' : 'section'} handleCoverLoad={handleCoverLoad} handleCoverError={handleCoverError} />;
       }
       return <InfoCard flightId={flightId} urls={urls} handleCoverLoad={handleCoverLoad} handleCoverError={handleCoverError} />;
     } else {
@@ -62,10 +62,10 @@ const InfoCard = props => {
 };
 
 const MiniCard = props => {
-  const { flightId, url, handleCoverLoad, handleCoverError } = props;
+  const { flightId, url, location, handleCoverLoad, handleCoverError } = props;
 
   return (
-    <a className='MiniCard ga-flight' id={flightId} href={flightURLFormatter(flightId)} target='_blank' rel='noopener noreferrer'>
+    <a className={'MiniCard ga-flight ga-' + location} id={flightId} href={flightURLFormatter(flightId)} target='_blank' rel='noopener noreferrer'>
       <Card
         header={
           <h2>{flightId.toUpperCase()}</h2>

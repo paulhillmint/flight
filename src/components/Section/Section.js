@@ -45,10 +45,8 @@ const Cell = props => {
 const More = props => {
   const { series, number } = props;
   return (
-    <a className='More ga-airline' id={series} href={airlineURLFormatter(series)} target='_blank' rel='noopener noreferrer'>
-      <Card>
-        {`View All ${number} Flights of Airline ${series}`}
-      </Card>
+    <a className='More ga-airline ga-section' id={series} href={airlineURLFormatter(series)} target='_blank' rel='noopener noreferrer'>
+      <Card>{`View All ${number} Flights of Airline ${series}`}</Card>
     </a>
   )
 }

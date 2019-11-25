@@ -35,7 +35,7 @@ const AirlineListCard = props => {
 
   const renderAirlineLinks = () => {
     return list.map(a => (
-      <WebLink url={airlineURLFormatter(a.series)} title={`Airline ${a.series}`} icon={<FiList />} number={a.startNumber} key={a.series} />
+      <WebLink url={airlineURLFormatter(a.series)} title={`Airline ${a.series}`} icon={<FiList />} number={a.startNumber} key={a.series} classes={' ga-airline ga-card'} id={a.series} />
     ));
   };
 
