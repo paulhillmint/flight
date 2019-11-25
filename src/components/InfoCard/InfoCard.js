@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { FaBus, FaCat } from 'react-icons/fa';
-import { FiLink, FiChevronRight } from 'react-icons/fi';
+import { FaCat } from 'react-icons/fa';
 import { IoIosWarning } from 'react-icons/io';
 import { MdMovieCreation } from 'react-icons/md';
 
@@ -42,7 +41,7 @@ const InfoCardContainer = props => {
 
 const InfoCard = props => {
   const { flightId, urls, handleCoverLoad, handleCoverError } = props;
-  const { coverURL, makerURL, torrentURL, busURL } = urls;
+  const { coverURL, makerURL, torrentURL } = urls;
 
   return (
     <Card

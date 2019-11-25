@@ -44,6 +44,7 @@ const Header = () => {
                 About
               </a>
               &nbsp;&nbsp;/
+              {/* eslint-disable-next-line */}
               <a className="ga-nav" id="fav" onClick={handleFav}>
                 <FaRegStar />
               </a>

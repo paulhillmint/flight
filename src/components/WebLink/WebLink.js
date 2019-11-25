@@ -1,12 +1,5 @@
-import React, { useState } from 'react';
-import { FaBus, FaCat } from 'react-icons/fa';
+import React from 'react';
 import { FiLink, FiChevronRight } from 'react-icons/fi';
-import { IoIosWarning } from 'react-icons/io';
-import { MdMovieCreation } from 'react-icons/md';
-
-import { urlFinder, flightURLFormatter } from '../../utils/urlUtil';
-
-import Card from '../Card';
 
 import './WebLink.css';
 

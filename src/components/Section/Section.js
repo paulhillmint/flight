@@ -1,8 +1,7 @@
 import React from 'react';
 import { Row, Col } from 'react-grid-system';
-import { MdLabel, MdExposurePlus1 } from 'react-icons/md';
 
-import { urlFinder, airlineURLFormatter } from '../../utils/urlUtil';
+import { airlineURLFormatter } from '../../utils/urlUtil';
 
 import InfoCard from '../InfoCard';
 import Headline from '../Headline';

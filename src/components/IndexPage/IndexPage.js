@@ -16,6 +16,7 @@ const IndexPage = () => {
       if (a.indexCount && a.indexCount > 0) {
         return (<Section series={a.series} startNumber={a.startNumber} flightCount={a.indexCount} hasMore={true} key={a.series} />);
       }
+      return null;
     });
   };
 
