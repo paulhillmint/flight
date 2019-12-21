@@ -1,10 +1,11 @@
 {
   "specials": [
     "SSNI-671",
-    "SSNI-658",
-    "ABP-935",
+    "ABP-940",
     "PPPD-810",
-    "MIDE-726"
+    "SSNI-658",
+    "MIDE-726",
+    "SSNI-674"
   ],
   "airlines": [
     {
@@ -12,7 +13,7 @@
       "list": [
         {
           "series": "SSNI",
-          "startNumber": 673,
+          "startNumber": 688,
           "indexCount": 16
         }, {
           "series": "ABP",
